@@ -1,0 +1,22 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+}
+
+.full-width {
+    width: 100%;
+}
+@keyframes ripple-effect {
+    to {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }

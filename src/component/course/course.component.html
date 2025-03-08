@@ -1,0 +1,73 @@
+@if(courses.length > 0) {
+<div class="courses-grid">
+  @for(course of courses; track $index) {
+  <div class="course-card-container">
+    
+    <mat-card class="course-card mat-elevation-z3">
+      @if(isTeacher){
+        <button mat-mini-fab color="accent" (click)="onDeleteCourse(course.id)" >
+          <mat-icon>remove</mat-icon>
+        </button>
+      }
+      <div class="course-header">
+        <mat-card-header>
+          <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card-header>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content class="card-content">
+        <p>{{ course.description }}</p>
+      </mat-card-content>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-actions class="card-actions">
+        <button mat-raised-button color="primary" class="action-button" (click)="enroll(course.id)">
+          <mat-icon>{{ 'add' | icon }}</mat-icon> Enroll
+        </button>
+
+        <button mat-raised-button color="warn" class="action-button" (click)="unenroll(course.id)">
+          <mat-icon>{{ 'remove' | icon }}</mat-icon> Remove
+        </button>
+
+
+        @if(isTeacher)
+        {
+        <button mat-mini-fab color="accent" (click)="openAddLessonDialog(course.id)">
+          <mat-icon>add</mat-icon>
+        </button>
+        
+        }
+
+
+        <!-- כפתור לפתיחת שיעורי הקורס -->
+        <button mat-mini-fab color="accent" (click)="openLessonsDialog(course.id)">
+          <mat-icon>menu_book</mat-icon>
+        </button>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  }
+</div>
+} @else {
+<ng-template #noCourses>
+  <mat-card class="no-courses-card mat-elevation-z2">
+    <mat-card-content class="empty-state">
+      <mat-icon class="empty-icon">school</mat-icon>
+      <p>No courses available</p>
+      <button mat-stroked-button color="primary">Browse Catalog</button>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+}
+
+
+@if(isTeacher){
+  <button mat-mini-fab color="accent" (click)="addCours()" >
+    <mat-icon>add</mat-icon>
+  </button>
+
+}

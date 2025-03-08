@@ -1,0 +1,93 @@
+/* add-courses.component.css */
+.course-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    background-color: #f5f5f5;
+  }
+  
+  .course-card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  mat-card-header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 16px;
+    margin-bottom: 0 !important;
+  }
+  
+  mat-card-title {
+    margin: 0;
+    color: white !important;
+    font-weight: 500;
+  }
+  
+  mat-card-subtitle {
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-top: 4px;
+  }
+  
+  .header-icon {
+    background-color: white;
+    color: #3f51b5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  mat-card-content {
+    padding: 24px;
+  }
+  
+  .course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  /* Style for mat-icons inside input */
+  mat-icon[matPrefix] {
+    margin-right: 12px;
+    color: #3f51b5;
+  }
+  
+  /* Custom hover effects */
+  mat-form-field:hover {
+    box-shadow: 0 2px 8px rgba(63, 81, 181, 0.15);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  button[mat-raised-button] {
+    transition: transform 0.2s ease;
+  }
+  
+  button[mat-raised-button]:not([disabled]):hover {
+    transform: translateY(-2px);
+  }
